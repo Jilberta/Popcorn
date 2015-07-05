@@ -5,10 +5,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.squareup.otto.Bus;
 
 import java.util.List;
 
+import ge.quickscope.buisness.MovieDBPopularMoviesLogic;
+import ge.quickscope.buisness.MovieDBPopularMoviesLogicController;
 import ge.quickscope.model.items.Movie;
+import ge.quickscope.model.net.MovieSource;
+import ge.quickscope.model.net.MoviesDataSource;
 import ge.quickscope.popcorn.R;
 import ge.quickscope.popcorn.mvp.views.MovieCatalogView;
 
@@ -20,6 +28,17 @@ public class MovieCatalogActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button click = (Button) findViewById(R.id.click);
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bus bus = new Bus();
+                MoviesDataSource source = new MovieSource(bus);
+                MovieDBPopularMoviesLogic source2 = new MovieDBPopularMoviesLogicController(source, bus);
+                source2.execute();
+            }
+        });
     }
 
     @Override
