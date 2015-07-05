@@ -1,14 +1,20 @@
 package ge.quickscope.popcorn.ui.activities;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
+import ge.quickscope.model.items.Movie;
 import ge.quickscope.popcorn.R;
+import ge.quickscope.popcorn.mvp.views.MovieCatalogView;
 
 
-public class MovieCatalogActivity extends ActionBarActivity {
+public class MovieCatalogActivity extends ActionBarActivity implements
+        MovieCatalogView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,4 +43,45 @@ public class MovieCatalogActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public void displayMovies(List<Movie> movieCatalogList) {
+
+    }
+
+    @Override
+    public boolean isCatalogEmpty() {
+        return false;
+    }
+
+    @Override
+    public void addMovieCatalog(List<Movie> movieCatalogList) {
+
+    }
+
+    @Override
+    public void displayIsLoading() {
+
+    }
+
+    @Override
+    public void hideIsLoading() {
+
+    }
+
+    @Override
+    public void displayIsLoadingBar() {
+
+    }
+
+    @Override
+    public void hideIsLoadingBBar() {
+
+    }
+
 }

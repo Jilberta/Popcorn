@@ -1,13 +1,20 @@
 package ge.quickscope.popcorn.ui.activities;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import ge.quickscope.popcorn.R;
+import java.util.List;
 
-public class MovieDetailActivity extends ActionBarActivity {
+import ge.quickscope.model.items.Review;
+import ge.quickscope.popcorn.R;
+import ge.quickscope.popcorn.mvp.views.MovieDetailView;
+
+public class MovieDetailActivity extends ActionBarActivity implements
+        MovieDetailView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,4 +43,50 @@ public class MovieDetailActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public void setTitle(String title) {
+
+    }
+
+    @Override
+    public void setDescription(String description) {
+
+    }
+
+    @Override
+    public void setTag(String tag) {
+
+    }
+
+    @Override
+    public void setHomePage(String homePage) {
+
+    }
+
+    @Override
+    public void setCompanies(String companies) {
+
+    }
+
+    @Override
+    public void showReviews(List<Review> reviews) {
+
+    }
+
+    @Override
+    public void showMovieCover(Bitmap movieCover) {
+
+    }
+
+    @Override
+    public void showMovieImage(String imageUrl) {
+
+    }
+
 }
