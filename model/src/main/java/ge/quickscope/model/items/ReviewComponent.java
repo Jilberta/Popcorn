@@ -6,11 +6,11 @@ import java.util.List;
  * Created by Jay on 7/5/2015.
  */
 public class ReviewComponent {
-    private String id;
-    private String page;
+    private String id, page;
+//    private String page;
     private List<Review> results;
-    private Number total_pages;
-    private Number total_results;
+    private Number total_pages, total_results;
+//    private Number total_results;
 
     public String getId() {
         return id;

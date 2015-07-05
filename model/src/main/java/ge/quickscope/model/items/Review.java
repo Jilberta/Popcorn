@@ -4,9 +4,9 @@ package ge.quickscope.model.items;
  * Created by Jay on 7/5/2015.
  */
 public class Review {
-    private String id;
-    private String author;
-    private String content;
+    private String id, author, content;
+//    private String author;
+//    private String content;
 
     public String getId() {
         return id;

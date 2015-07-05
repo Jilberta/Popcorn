@@ -18,13 +18,13 @@ public class ImagesComponent {
     }
 
     public class MovieImage {
-        private int width;
-        private int height;
-        private String file_path;
-        private String iso_639_1;
-        private float aspect_ratio;
-        private float vote_average;
-        private int vote_count;
+        private int width, height, vote_count;
+//        private int height;
+        private String file_path, iso_639_1;
+//        private String iso_639_1;
+        private float aspect_ratio, vote_average;
+//        private float vote_average;
+//        private int vote_count;
 
         public String getFile_path() {
             return file_path;

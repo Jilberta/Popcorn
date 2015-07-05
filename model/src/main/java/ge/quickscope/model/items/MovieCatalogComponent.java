@@ -6,10 +6,10 @@ import java.util.List;
  * Created by Jay on 7/5/2015.
  */
 public class MovieCatalogComponent {
-    private Number page;
+    private Number page, total_pages, total_results;
     private List<Movie> results;
-    private Number total_pages;
-    private Number total_results;
+//    private Number total_pages;
+//    private Number total_results;
 
     public MovieCatalogComponent(List<Movie> results) {
         this.results = results;

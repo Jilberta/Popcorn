@@ -6,32 +6,33 @@ import java.util.List;
  * Created by Jay on 7/5/2015.
  */
 public class MovieDetail {
-    private String backdrop_path;
+    private String backdrop_path, homepage, imdb_id, original_language, original_title, overview, poster_path,
+            release_date, status, tagline, title;
     private BelongsToCollection belongs_to_collection;
-    private String homepage;
-    private String imdb_id;
-    private String original_language;
-    private String original_title;
-    private String overview;
-    private String poster_path;
-    private String release_date;
-    private String status;
-    private String tagline;
-    private String title;
-    private List production_countries;
-    private List genres;
-    private List spoken_languages;
+//    private String homepage;
+//    private String imdb_id;
+//    private String original_language;
+//    private String original_title;
+//    private String overview;
+//    private String poster_path;
+//    private String release_date;
+//    private String status;
+//    private String tagline;
+//    private String title;
+    private List production_countries, genres, spoken_languages;
+//    private List genres;
+//    private List spoken_languages;
     private List<ProductionCompany> production_companies;
     private List<ImagesComponent.MovieImage> movieImagesList;
-    private Number budget;
-    private Number id;
-    private Number popularity;
-    private Number revenue;
-    private Number runtime;
-    private Number vote_average;
-    private Number vote_count;
-    private boolean adult;
-    private boolean video;
+    private Number budget, id, popularity, revenue, runtime, vote_average, vote_count;
+//    private Number id;
+//    private Number popularity;
+//    private Number revenue;
+//    private Number runtime;
+//    private Number vote_average;
+//    private Number vote_count;
+    private boolean adult, video;
+//    private boolean video;
 
     public boolean getAdult() {
         return this.adult;
