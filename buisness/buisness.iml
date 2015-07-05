@@ -27,5 +27,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="shared" exported="" />
+    <orderEntry type="module" module-name="model" exported="" />
   </component>
 </module>
