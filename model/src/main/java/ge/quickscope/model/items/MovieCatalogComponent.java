@@ -1,11 +1,12 @@
 package ge.quickscope.model.items;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Jay on 7/5/2015.
  */
-public class MovieCatalogComponent {
+public class MovieCatalogComponent implements Serializable {
     private Number page, total_pages, total_results;
     private List<Movie> results;
 //    private Number total_pages;

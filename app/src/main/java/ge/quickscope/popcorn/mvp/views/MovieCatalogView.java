@@ -19,7 +19,7 @@ public interface MovieCatalogView extends MVPView {
 
     void hideIsLoading();
 
-    void displayIsLoadingBar();
+    void displaySnackBar();
 
-    void hideIsLoadingBBar();
+    void hideSnackBar();
 }

@@ -3,7 +3,6 @@ package ge.quickscope.buisness;
 import com.squareup.otto.Bus;
 
 import ge.quickscope.model.items.MovieCatalogComponent;
-import ge.quickscope.model.net.MovieSource;
 import ge.quickscope.model.net.MoviesDataSource;
 
 /**

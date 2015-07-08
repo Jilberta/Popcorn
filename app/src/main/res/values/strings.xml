@@ -4,4 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_movie_detail">MovieDetailActivity</string>
+
+    <string name="movie_catalog_activity.loading_film">Movie loading, please wait</string>
+    <string name="movie_catalog_activity.more_movies">Loading more films</string>
+    <string name="movie_catalog_activity.snackbar_cancel">Cancel</string>
 </resources>

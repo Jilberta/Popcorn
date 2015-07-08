@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cover_background_color">#ff4e5d64</color>
+    <color name="catalog_item_background_color">#AA000000</color>
+    <color name="catalog_item_title_text_color">#FFF</color>
+
+    <color name="theme_primary">#363F44</color>
+    <color name="theme_accent">#E91C62</color>
+    <color name="theme_primary_dark">#ff1a1f23</color>
+    <color name="theme_window_background">#363F44</color>
+</resources>

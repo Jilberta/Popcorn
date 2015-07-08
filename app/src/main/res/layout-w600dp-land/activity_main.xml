@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff54646c"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/movie_catalog_background_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/movie_catalog_item_height"
+        android:background="@color/theme_primary" />
+
+    <ge.quickscope.popcorn.ui.custom_views.ResponsiveRecyclerView
+        android:id="@+id/movie_catalog_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:columnWidth="@dimen/movie_catalog_item_width"
+        android:clipToPadding="false" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/movie_catalog_toolbar"
+        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/theme_primary">
+
+        <ge.quickscope.popcorn.ui.custom_views.CustomTitleTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="22sp"
+            android:textColor="@color/catalog_item_title_text_color" />
+    </android.support.v7.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/movie_catalog_progress"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyleLarge" />
+
+</FrameLayout>

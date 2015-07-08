@@ -1,12 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
+    aaptOptions {
+        useNewCruncher false
+    }
+
     defaultConfig {
         applicationId "ge.quickscope.popcorn"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -22,5 +27,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:recyclerview-v7:21.0.3'
     compile project(':buisness')
+
+    // Dagger compiler
+    apt 'com.google.dagger:dagger-compiler:2.0'
+
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.nispok:snackbar:2.10.10'
 }
