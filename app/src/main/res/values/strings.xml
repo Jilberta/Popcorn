@@ -8,4 +8,11 @@
     <string name="movie_catalog_activity.loading_film">Movie loading, please wait</string>
     <string name="movie_catalog_activity.more_movies">Loading more films</string>
     <string name="movie_catalog_activity.snackbar_cancel">Cancel</string>
+
+    <string name="movie_detail_activity.description">Description</string>
+    <string name="movie_detail_activity.tagline">Tagline</string>
+    <string name="movie_detail_activity.reviews_description">Reviews</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

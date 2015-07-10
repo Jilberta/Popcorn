@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="movies_margin">10dp</dimen>
+    <dimen name="movie_catalog_item_width">190dp</dimen>
+    <dimen name="movie_catalog_item_height">295dp</dimen>
+</resources>

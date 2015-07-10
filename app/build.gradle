@@ -11,6 +11,8 @@ android {
 
     defaultConfig {
         applicationId "ge.quickscope.popcorn"
+        testApplicationId "ge.quickscope.popcorn.test"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -26,14 +28,21 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':buisness')
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:21.0.3'
-    compile project(':buisness')
-
+    compile 'com.android.support:palette-v7:22.2.0'
+    compile 'com.android.support:design:22.2.0'
     // Dagger compiler
     apt 'com.google.dagger:dagger-compiler:2.0'
-
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.nispok:snackbar:2.10.10'
+
+    // Test Libs
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.0') {
+        exclude module: 'support-annotations'
+    }
 }

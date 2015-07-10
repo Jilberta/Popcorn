@@ -8,8 +8,10 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -51,6 +53,7 @@ public class MovieCatalogActivity extends ActionBarActivity implements
     private static final String MOVIE_CATALOG_COMPONENT_KEY = "movieCatalogComponent";
     private final static String BACKGROUND_TRANSLATION_KEY = "backgroundTrans";
     public final static String MOVIE_ID_KEY = "movie_id";
+    public final static String MOVIE_TITLE_KEY = "movie_title";
     public final static String MOVIE_LOCATION_KEY = "view_location";
     public final static String MOVIE_POSITION_KEY = "movie_position";
     public final static String SHARED_ELEMENT_COVER_KEY = "cover";
@@ -67,6 +70,8 @@ public class MovieCatalogActivity extends ActionBarActivity implements
     ProgressBar progressBar;
     @Bind(R.id.movie_catalog_recycler)
     RecyclerView recycler;
+    @Bind(R.id.drawer)
+    DrawerLayout drawerLayout;
     @Inject
     MovieCatalogPresenter movieCatalogPresenter;
 
@@ -78,23 +83,13 @@ public class MovieCatalogActivity extends ActionBarActivity implements
 
         initDI();
         initToolbar();
+        initDrawer();
         initRecycler();
 
         if(savedInstanceState == null)
             movieCatalogPresenter.attachView(this);
         else
             initFromBundle(savedInstanceState);
-
-//        Button click = (Button) findViewById(R.id.click);
-//        click.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Bus bus = new Bus();
-//                MoviesDataSource source = new MovieSource(bus);
-//                MovieDBPopularMoviesLogic source2 = new MovieDBPopularMoviesLogicController(source, bus);
-//                source2.execute();
-//            }
-//        });
     }
 
     @Override
@@ -120,8 +115,15 @@ public class MovieCatalogActivity extends ActionBarActivity implements
     private void initToolbar(){
         setSupportActionBar(toolBar);
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeAsUpIndicator();
         toolBar.setNavigationOnClickListener(this);
+    }
+
+    private void initDrawer(){
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.open, R.string.close);
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
     }
 
     private void initRecycler(){
@@ -253,7 +255,9 @@ public class MovieCatalogActivity extends ActionBarActivity implements
         Intent movieDetailActivity = new Intent(MovieCatalogActivity.this, MovieDetailActivity.class);
 
         String movieId = catalogAdapter.getMoviesList().get(position).getId();
+        String movieTitle = catalogAdapter.getMoviesList().get(position).getTitle();
         movieDetailActivity.putExtra(MOVIE_ID_KEY, movieId);
+        movieDetailActivity.putExtra(MOVIE_TITLE_KEY, movieTitle);
         movieDetailActivity.putExtra(MOVIE_POSITION_KEY, position);
 
         ImageView coverView = (ImageView) v.findViewById(R.id.cover);

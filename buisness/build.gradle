@@ -15,4 +15,8 @@ dependencies {
     compile project(':shared')
     compile project(':model')
     provided 'com.google.dagger:dagger-compiler:2.0'
+
+    //test dependencies
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-core:1.9.5'
 }

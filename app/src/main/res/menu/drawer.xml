@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_1"
+            android:checked="true"
+            android:icon="@drawable/ic_public_white_24dp"
+            android:title="TV Shows" />
+        <item
+            android:id="@+id/navigation_item_2"
+            android:icon="@drawable/ic_fab_star"
+            android:title="Animes"/>
+    </group>
+
+    <item
+        android:id="@+id/navigation_subheader"
+        android:title="SubHeader">
+        <menu>
+            <item
+                android:id="@+id/navigation_sub_item_1"
+                android:icon="@drawable/ic_fab_star"
+                android:title="Item 1"/>
+            <item
+                android:id="@+id/navigation_sub_item_2"
+                android:icon="@drawable/ic_fab_star"
+                android:title="Item 2"/>
+        </menu>
+    </item>
+</menu>

@@ -27,4 +27,11 @@ public interface MovieDetailView extends MVPView {
 
     void showMovieImage(String imageUrl);
 
+    void startVideoStreaming(String source);
+
+    void showToast(String text);
+
+    void displayLoadingBar();
+
+    void hideLoadingBar();
 }
