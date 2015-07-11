@@ -118,7 +118,7 @@ public class MovieDetailPresenter extends Presenter {
         src.getMovieTableItems(movieDetail.getImdb_id(), movieDetail.getTitle());//"tt0816692", "Interstellar");
     }
 
-    private static final String TEMP_HASH = "V27ZtIDHBpJuv9VuOz4JWw";
+    private static final String TEMP_HASH = "GWwRaQFPCcKeDuJNKpzRMQ";
     @Subscribe
     public void onVideoLinksReceived(ArrayList<MovieTableItem> movieTableItems){
         if(movieTableItems != null && !movieTableItems.isEmpty()){
